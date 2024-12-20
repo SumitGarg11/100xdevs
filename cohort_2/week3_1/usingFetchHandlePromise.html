@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Hello</h1>
+    <!-- our task when we click on the button fetch the data from the backend  -->
+    <script>
+        function getData(){
+            // const response = fetch("https://fakerapi.it/api/v1/persons");
+            // console.log(response);
+           // this above fetch return the promise , so we need to solve the promise in two way 
+
+        // *** This is one way to solve the promise problem ***
+
+        //    fetch("https://fakerapi.it/api/v1/persons")
+        //    .then(function(response){
+        //     response.json()
+        //     .then(function(finalData){
+        //         console.log(finalData);
+        //     })
+        //    })
+
+        fetch("https://fakerapi.it/api/v1/persons")
+        .then(function(response){
+            response.json()
+            .then(function(finalData){
+                console.log(finalData);
+            })
+        })
+
+        }
+        // *** This is another way to solve the promise problem  using the async ***
+
+        // async function getData2(){
+        //     const response = await fetch("https://fakerapi.it/api/v1/persons");
+        //     const finalData = await response.json();
+        //     console.log(finalData);
+        // }
+    </script>
+    <button onclick="getData()">GetData</button>
+</body>
+</html>
