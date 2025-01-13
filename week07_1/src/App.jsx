@@ -47,30 +47,37 @@
 
 // ****** Fresh Project To Learn props Driliing
 
-import { useState } from "react";
+import { useContext } from "react";
+import { countContext } from "./context";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { countAtom } from "./store/atom/count";
 function App() {
-  const [count, setCount] = useState(0);
+  
   return (
     <div>
-      <Count count={count}  setCount={setCount} />
+      
+      <Count  />
+     
       
     </div>
   );
 }
-function Count({ count, setCount }) {
+function Count() {
   return <div>
-   {count}
-   <CountReandered  count = {count}  />
-   <Buttons  count={count} setCount={setCount} />
+   
+   <CountReandered   />
+   <Buttons  />
 
    </div>;
 }
-function CountReandered({count}){
+function CountReandered(){
+   const count = useRecoilValue(countAtom);
    return <div>
       {count}
    </div>
 }
-function Buttons({count,setCount}) {
+function Buttons() {
+  const [count, setCount] = useRecoilState(countAtom);
   return (
     <div>
       <button onClick={() => {setCount(count+1)}}>Increasing</button>
