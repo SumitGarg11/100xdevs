@@ -15,7 +15,6 @@ function mul(a, b) {
   return a * b;
 }
 
-// Handle JSON-RPC requests
 app.post("/rpc", (req, res) => {
   const { jsonrpc, method, params, id } = req.body;
 
