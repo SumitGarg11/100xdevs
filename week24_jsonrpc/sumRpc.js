@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+function mul(a, b) {
+  return a * b;
+}
 function addNum(a, b) {
   return a + b;
 }
