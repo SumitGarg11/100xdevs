@@ -16,5 +16,5 @@ app.post("/rpc", function (req, res) {
   res.json({ result });
 });
 app.listen(3000, () => {
-  console.log("listening on port 3000");
+  console.log("Server listening on port 3000");
 });
