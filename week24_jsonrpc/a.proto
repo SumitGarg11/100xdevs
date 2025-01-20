@@ -1,0 +1,13 @@
+syntax = "proto3";
+message Person {
+string name = 1;
+    int32 age = 2;
+}
+service PersonService {
+rpc AddPerson(Person) return (Person);
+rpc GetPersonByName(GetPersonByNameRequset)return (Person);
+
+}
+ message GetPersonByNameRequset {
+     string name = 1;
+}
